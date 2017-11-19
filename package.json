@@ -1,0 +1,35 @@
+{
+  "name": "fs-lazy-cache",
+  "version": "1.0.0",
+  "description": "Lazy-loading, in-memory filesystem cache for Node.",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodeunit "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rjjakes/fs-lazy-cache.git"
+  },
+  "keywords": [
+    "filesystem",
+    "fs",
+    "lazy",
+    "loading",
+    "cache",
+    "memory",
+    "cache"
+  ],
+  "author": "https://github.com/rjjakes",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rjjakes/fs-lazy-cache/issues"
+  },
+  "homepage": "https://github.com/rjjakes/fs-lazy-cache#readme",
+  "devDependencies": {
+    "assert": "^1.4.1"
+  },
+  "dependencies": {
+    "fs-extra": "^4.0.2",
+    "memory-cache": "^0.2.0"
+  }
+}
