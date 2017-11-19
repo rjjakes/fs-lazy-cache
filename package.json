@@ -1,6 +1,6 @@
 {
   "name": "fs-lazy-cache",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Lazy-loading, in-memory filesystem cache for node.js",
   "main": "index.js",
   "scripts": {
