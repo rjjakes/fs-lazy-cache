@@ -126,20 +126,17 @@ const outputFileSync = function (file, contents, toDisk, timeout) {
     }
     // Save to disk.
     else {
-        if (fs.outputFileSync(file, contents)) {
-            // Set the cache.
-            if (timeout) {
-                cache.put(file, contents, timeout);
-            }
-            else {
-                cache.put(file, contents);
-            }
+        fs.outputFileSync(file, contents);
 
-            return true;
+        // Set the cache.
+        if (timeout) {
+            cache.put(file, contents, timeout);
         }
         else {
-            throw Error('Failed to output.');
+            cache.put(file, contents);
         }
+
+        return true;
     }
 };
 
