@@ -126,7 +126,7 @@ const outputFileSync = function (file, contents, toDisk, timeout) {
     }
     // Save to disk.
     else {
-        if (outputFileSync(file, contents)) {
+        if (fs.outputFileSync(file, contents)) {
             // Set the cache.
             if (timeout) {
                 cache.put(file, contents, timeout);
