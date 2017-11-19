@@ -52,11 +52,11 @@ fs.readFile(__dirname + '/README.md', function (err, output) {
             }
 
             // Output second file.
-            fs.outputFileSync(__dirname + '/test.txt', 'TEST', false);
+            fs.outputFileSync(__dirname + '/testsync.txt', 'TEST', false);
             console.log('First outputFileSync - PASSED');
 
             // Load the file back in. This will come from the cache.
-            let contentsReloadSync = fs.readFileSync(__dirname + '/test.txt');
+            let contentsReloadSync = fs.readFileSync(__dirname + '/testsync.txt');
 
             // Does it contain data?
             assert(contentsReloadSync.toString().includes('TEST'));
@@ -67,6 +67,11 @@ fs.readFile(__dirname + '/README.md', function (err, output) {
             if (fsnode.existsSync(__dirname + '/test.txt')) {
                 fsnode.unlinkSync(__dirname + '/test.txt');
             }
+
+            // Test the scandir.
+            fs.readFileSync('/tmp/something.txt');
+
+            console.log(fs.scanDir(__dirname));
 
         });
 

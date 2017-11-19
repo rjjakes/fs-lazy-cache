@@ -11,20 +11,75 @@ keep in the cache. A version of scanDir and scanDirSync is included.
 
 ## Usage 
 
+Check out the `test.js` file for some example usage.  
+
 ### readFile
 
-blah
+Load a file from the filesystem and add a copy to the cache.
+ 
+Uses `fs.readFile()` internally. 
 
 ```javascript
 var fs = require('fs-lazy-cache');
+
+fs.readFile('somefile.txt', function (err, output) {
+    if (err) throw err;
+    
+    return output;
+})
 ```
 
 ### readFileSync
 
-blah
+Load a file from the filesystem and add a copy to the cache.
+ 
+Uses `fs.readFileSync()` internally. 
 
 ```javascript
 var fs = require('fs-lazy-cache');
+
+var output = fs.readFile('somefile.txt');
+```
+
+### outputFile
+
+Save a file to the filesystem and store a copy in the cache. 
+
+Uses 'fs-extra.outputFile` internally. 
+
+```javascript
+fs.outputFile('somefile.txt', 'some contents', true, 5000, function (err) {
+    if (err) throw err;
+});    
+
+```
+
+`file` The filename.
+
+`contents` The file string contents.
+
+`toDisk` If the file should be saved to disk or only to the cache.
+
+`timeout` (Optional) Timeout in milliseconds before deleting from the cache. 
+
+`callback` Same callback functionality as `fs-extra.outputFile` or `fs.writeFile`
+
+### outputFileSync
+
+Same as above but with no callback. 
+
+Uses 'fs-extra.outputFileSync` internally.
+ 
+```javascript
+fs.outputFileSync('somefile.txt', 'some contents', false, 2000); 
+ ```
+
+### scanDir
+
+Scan the cache for files in a directory. Note this DOES NOT scan the filesystem.
+
+```javascript
+let filesArray = scanDir(__dirname);
 ```
 
 ## Credits
