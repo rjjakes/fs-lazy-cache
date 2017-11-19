@@ -1,10 +1,10 @@
 {
   "name": "fs-lazy-cache",
   "version": "1.0.0",
-  "description": "Lazy-loading, in-memory filesystem cache for Node.",
+  "description": "Lazy-loading, in-memory filesystem cache for node.js",
   "main": "index.js",
   "scripts": {
-    "test": "nodeunit "
+    "test": "node test.js "
   },
   "repository": {
     "type": "git",
@@ -15,7 +15,6 @@
     "fs",
     "lazy",
     "loading",
-    "cache",
     "memory",
     "cache"
   ],
