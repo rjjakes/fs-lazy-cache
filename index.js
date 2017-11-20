@@ -159,11 +159,11 @@ const scanDir = function (directory) {
     cache.keys().forEach(function (filename) {
         // If found, add it to the list.
         if (startsWith(filename, directory) && !filename.split(directory).pop().includes('/')) {
-            list.push(filename);
+            list.push(path.basename(filename));
         }
     });
 
-    return list;
+    return list.sort(); // Sort because fs.readDir sorts on Linux and we want to be consistent.
 };
 
 // Expose the functions.
