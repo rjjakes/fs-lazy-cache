@@ -3,15 +3,24 @@
 Another file system cache for Node.
 
 Lazy-loads files into a memory cache. Caches files on write. There's an option to not write file saves to disk and only
-keep in the cache. A version of scanDir is included.    
+keep in the cache. A version of scanDir is included.
+ 
 
 ## Installation
 
-`npm install fs-lazy-cache --save`
+```
+npm install fs-lazy-cache --save
+```
+
+or 
+
+```
+yarn add fs-lazy-cache
+```
 
 ## Usage 
 
-Check out the `test.js` file for some example usage.  
+Check out the `source/test.js` file for some example usage.  
 
 ### readFile
 
@@ -20,7 +29,7 @@ Load a file from the filesystem and add a copy to the cache.
 Uses `fs.readFile()` internally. 
 
 ```javascript
-var fs = require('fs-lazy-cache');
+let fs = require('fs-lazy-cache');
 
 fs.readFile('somefile.txt', function (err, output) {
     if (err) throw err;
@@ -36,9 +45,9 @@ Load a file from the filesystem and add a copy to the cache.
 Uses `fs.readFileSync()` internally. 
 
 ```javascript
-var fs = require('fs-lazy-cache');
+let fs = require('fs-lazy-cache');
 
-var output = fs.readFile('somefile.txt');
+let output = fs.readFile('somefile.txt');
 ```
 
 ### outputFile

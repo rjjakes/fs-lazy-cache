@@ -1,6 +1,6 @@
-var fsnode = require('fs');
-var fs = require('./index.js');
-var assert = require('assert');
+let fsnode = require('fs');
+let fs = require('./index.js');
+let assert = require('assert');
 
 // First load of file. This will come from the filesystem.
 fs.readFile(__dirname + '/README.md', function (err, output) {
