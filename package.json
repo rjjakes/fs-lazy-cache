@@ -5,7 +5,8 @@
   "main": "./distribution/index.js",
   "scripts": {
     "build": "babel source --presets babel-preset-es2015 --out-dir distribution",
-    "test": "node ./distribution/test.js "
+    "test": "node ./distribution/test.js",
+    "prepare": "yarn run build"
   },
   "repository": {
     "type": "git",
